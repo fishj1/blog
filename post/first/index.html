@@ -5,24 +5,24 @@
   <title>First - 伟渺极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="##Hello Hugo abcd abcd abcd abcd abcd">
+  <meta name="description" content="##一、Mac环境下安装 brew install hugo hugo version //Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown ##二、本地创建一个站点目录，（username为你的github账户名） $ hugo new site username.github.io 可以查">
   
   <meta itemprop="name" content="First - 伟渺极客">
-  <meta itemprop="description" content="##Hello Hugo abcd abcd abcd abcd abcd">
-  <meta itemprop="image" content="https://fishj1.github.io/blog/img/author.jpg">
+  <meta itemprop="description" content="##一、Mac环境下安装 brew install hugo hugo version //Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown ##二、本地创建一个站点目录，（username为你的github账户名） $ hugo new site username.github.io 可以查">
+  <meta itemprop="image" content="https://weimiao.github.io/blog/img/author.jpg">
   
   
   <meta name="twitter:description" content="">
   
-  <link rel="shortcut icon" href="https://fishj1.github.io/blog/img/favicon.ico"/>
-  <link rel="apple-touch-icon" href="https://fishj1.github.io/blog/apple-touch-icon.png" />
-  <link rel="apple-touch-icon-precomposed" href="https://fishj1.github.io/blog/apple-touch-icon.png" />
-  <link rel="stylesheet" href="https://fishj1.github.io/blog/highlight/styles/github.css">
-  <script src="https://fishj1.github.io/blog/highlight/highlight.pack.js"></script>
+  <link rel="shortcut icon" href="https://weimiao.github.io/blog/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="https://weimiao.github.io/blog/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="https://weimiao.github.io/blog/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://weimiao.github.io/blog/highlight/styles/github.css">
+  <script src="https://weimiao.github.io/blog/highlight/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   
-  <link rel="stylesheet" href="https://fishj1.github.io/blog/font/hack/css/hack.min.css">
-  <link rel="stylesheet" href="https://fishj1.github.io/blog/css/style.css">
+  <link rel="stylesheet" href="https://weimiao.github.io/blog/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="https://weimiao.github.io/blog/css/style.css">
 </head>
 
 <body>
@@ -30,11 +30,11 @@
     <div>
   
   <div id="imglogo">
-    <a href="https://fishj1.github.io/blog/"><img src="https://fishj1.github.io/blog/img/logo.jpg" alt="伟渺极客" title="伟渺极客"/></a>
+    <a href="https://weimiao.github.io/blog/"><img src="https://weimiao.github.io/blog/img/logo.jpg" alt="伟渺极客" title="伟渺极客"/></a>
   </div>
   
   <div id="textlogo">
-    <h1 class="site-name"><a href="https://fishj1.github.io/blog/" title="伟渺极客">伟渺极客</a></h1>
+    <h1 class="site-name"><a href="https://weimiao.github.io/blog/" title="伟渺极客">伟渺极客</a></h1>
     <h2 class="blog-motto">Talk is cheap,show me code.</h2>
   </div>
   <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
@@ -66,7 +66,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://fishj1.github.io/blog/post/first/" title="First" itemprop="url">First</a>
+      <a href="https://weimiao.github.io/blog/post/first/" title="First" itemprop="url">First</a>
   </h1>
   <p class="article-author">By
     
@@ -85,13 +85,139 @@
       
 		</div>
     
-    <p>##Hello Hugo</p>
+    <p>##一、Mac环境下安装</p>
 
-<p>abcd
-abcd
-abcd
-abcd
-abcd</p>
+<pre><code>brew install hugo
+hugo version
+//Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown
+</code></pre>
+
+<p>##二、本地创建一个站点目录，（username为你的github账户名）</p>
+
+<pre><code>$ hugo new site username.github.io
+</code></pre>
+
+<p>可以查看有这些目录：</p>
+
+<pre><code>cd username.github.io
+</code></pre>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/11811369-014227bbab4d4fc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>安装主题</p>
+
+<pre><code>$ cd themes
+$ git clone https://github.com/coderzh/hugo-pacman-theme.git --depth=1
+</code></pre>
+
+<p>这套主题感觉还是不错的，简单清爽的界面 <a href="https://themes.gohugo.io/hugo-pacman-theme/">hugo-pacman-theme</a>
+<img src="https://upload-images.jianshu.io/upload_images/11811369-0dd431e651ea2bd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+打开 config.toml，做以下的配置</p>
+
+<pre><code>BaseURL = &quot;https://username.github.io/blog&quot;
+LanguageCode = &quot;zh-CN&quot;
+HasCJKLanguage = true
+Title = &quot;个人博客&quot;
+Theme = &quot;hugo-pacman-theme&quot;
+pygmentsStyle = &quot;default&quot;
+pygmentsUseClasses = true
+
+[Author]
+  Name = &quot;username&quot;
+
+[outputs]
+  home = [ &quot;RSS&quot;, &quot;HTML&quot; ]
+
+[outputFormats] 
+  [outputFormats.RSS]
+    mediatype = &quot;application/rss&quot;
+    baseName = &quot;feed&quot;
+
+[Params]
+
+  BottomIntroduce = &quot;个人微信&quot;
+  Subtitle = &quot;Talk is cheap,show me code.&quot;
+  Imglogo = &quot;img/logo.jpg&quot;
+  AuthorImg = &quot;img/wechat.jpg&quot;
+  DateFormat = &quot;2019年10月24日&quot;
+  MonthFormat = &quot;2019年10月&quot;
+  FancyBox = false
+
+  [Params.Disqus]
+    ShortName = &quot;helloworld&quot;
+
+  [Params.Strings]
+    Search = &quot;搜索&quot;
+    PageNotFound = &quot;你访问的页面不存在&quot;
+    ShowSideBar = &quot;显示侧边栏&quot;
+    HideSideBar = &quot;隐藏侧边栏&quot;
+    Categories = &quot;分类&quot;
+    Archive = &quot;归档&quot;
+    Tags = &quot;标签&quot;
+    Rss = &quot;RSS 订阅&quot;
+    TableOfContents = &quot;文章目录&quot;
+
+[Menu]
+  [[Menu.Main]]
+    Name = &quot;首页&quot;
+    URL = &quot;/&quot;
+    Weight = 1
+  [[Menu.Main]]
+    Name = &quot;关于&quot;
+    URL = &quot;/about&quot;
+    Weight = 2
+</code></pre>
+
+<p>素材可以放在：</p>
+
+<pre><code>static
+└── img
+    ├── logo.jpg
+    └── wechat.jpg
+</code></pre>
+
+<p>修改archetypes下面default.md</p>
+
+<pre><code>---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ .Date }}
+draft: false
+toc: false
+categories: [&quot;技术&quot;]
+tags: []
+---
+</code></pre>
+
+<p>创建文章：</p>
+
+<pre><code>$ hugo new post/first.md
+</code></pre>
+
+<p>生成静态博客并在本地查看</p>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>你的博客就可以在本地跑起来了，访问<a href="http://127.0.0.1:1313/你可以看到内容。">http://127.0.0.1:1313/你可以看到内容。</a>
+###三、将本地的个人博客托管到github上面
+1.首先需要生成public目录</p>
+
+<pre><code>$ hugo --baseUrl =&quot;https://username.github.io/blog/&quot;
+</code></pre>
+
+<p>2.github下面创建blog仓库，配置Github Pages
+<img src="https://upload-images.jianshu.io/upload_images/11811369-c25356d60dbbc420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="https://upload-images.jianshu.io/upload_images/11811369-4877803d7acfe88b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+3.将public目录下面代码上传的你的github的blog仓库下：</p>
+
+<pre><code>git remote add origin https://github.com/username/blog.git
+git add -A
+git commit -m &quot;first commit&quot;
+git push -u origin master
+</code></pre>
+
+<p>等待一会儿，在浏览其中访问：
+<a href="https://username.github.io/blog">https://username.github.io/blog</a></p>
 
     
 	</div>
@@ -105,14 +231,14 @@ abcd</p>
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://fishj1.github.io/blog/categories/%E9%9A%8F%E7%AC%94">随笔</a>
+  <a class="article-category-link" href="https://weimiao.github.io/blog/categories/%E6%8A%80%E6%9C%AF">技术</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://fishj1.github.io/blog/post/first/" data-title="First" data-tsina="" class="share clearfix">
+    <div data-url="https://weimiao.github.io/blog/post/first/" data-title="First" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -134,8 +260,8 @@ abcd</p>
 
 
 var disqus_config = function () {
-this.page.url = "https://fishj1.github.io/blog/post/first/";
-this.page.identifier = "https://fishj1.github.io/blog/post/first/";
+this.page.url = "https://weimiao.github.io/blog/post/first/";
+this.page.identifier = "https://weimiao.github.io/blog/post/first/";
 };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -167,9 +293,9 @@ xhr.send(null);
   <p class="asidetitle">分类</p>
   <ul>
     
-    <li><a href="https://fishj1.github.io/blog/categories/%e5%85%b3%e4%ba%8e" title="关于">关于<sup>2</sup></a></li>
+    <li><a href="https://weimiao.github.io/blog/categories/%e5%85%b3%e4%ba%8e" title="关于">关于<sup>2</sup></a></li>
     
-    <li><a href="https://fishj1.github.io/blog/categories/%e9%9a%8f%e7%ac%94" title="随笔">随笔<sup>1</sup></a></li>
+    <li><a href="https://weimiao.github.io/blog/categories/%e6%8a%80%e6%9c%af" title="技术">技术<sup>2</sup></a></li>
     
   </ul>
 </div>
@@ -187,7 +313,7 @@ xhr.send(null);
       
       
       <li class="archive-list-item">
-        <a class="archive-list-link" href="https://fishj1.github.io/blog/post/#2019-10">2019年10月</a><span class="archive-list-count">2</span>
+        <a class="archive-list-link" href="https://weimiao.github.io/blog/post/#2019-10">2019年10月</a><span class="archive-list-count">3</span>
       </li>
       
     </ul>
@@ -209,7 +335,7 @@ xhr.send(null);
   
   <div class="line">
     <span></span>
-    <div style='background:no-repeat url("https://fishj1.github.io/blog/img/wechat.jpg") left top;-webkit-background-size:6.875em 6.875em;-moz-background-size:6.875em 6.875em;background-size:6.875em 6.875em;' class="author" ></div>
+    <div style='background:no-repeat url("https://weimiao.github.io/blog/img/wechat.jpg") left top;-webkit-background-size:6.875em 6.875em;-moz-background-size:6.875em 6.875em;background-size:6.875em 6.875em;' class="author" ></div>
   </div>
   
   
@@ -226,12 +352,12 @@ xhr.send(null);
   </div>
   <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2019
     
-    <a href="https://fishj1.github.io/blog/" title="伟渺极客">伟渺极客</a>
+    <a href="https://weimiao.github.io/blog/" title="伟渺极客">伟渺极客</a>
     
   </p>
 </div>
 </footer>
-  <script src="https://fishj1.github.io/blog/js/jquery-2.1.0.min.js"></script>
+  <script src="https://weimiao.github.io/blog/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 done = false;
 $(document).ready(function(){
@@ -278,7 +404,7 @@ $(document).ready(function(){
     if (false === done) {
       event.preventDefault();
       var orgVal = $(this).find('#search').val();
-      $(this).find('#search').val('site:https:\/\/fishj1.github.io\/blog\/ ' + orgVal);
+      $(this).find('#search').val('site:https:\/\/weimiao.github.io\/blog\/ ' + orgVal);
       done = true;
       $(this).submit();
     }

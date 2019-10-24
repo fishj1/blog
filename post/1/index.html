@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>About - 伟渺极客</title>
+  <title>1 - 伟渺极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="这个一个关于的页面">
+  <meta name="description" content="">
   
-  <meta itemprop="name" content="About - 伟渺极客">
-  <meta itemprop="description" content="这个一个关于的页面">
+  <meta itemprop="name" content="1 - 伟渺极客">
+  <meta itemprop="description" content="">
   <meta itemprop="image" content="https://weimiao.github.io/blog/img/author.jpg">
   
   
@@ -66,7 +66,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://weimiao.github.io/blog/about/about/" title="About" itemprop="url">About</a>
+      <a href="https://weimiao.github.io/blog/post/1/" title="1" itemprop="url">1</a>
   </h1>
   <p class="article-author">By
     
@@ -74,14 +74,18 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2019-10-24 14:53:35 &#43;0800 CST" itemprop="datePublished">2019年10月24日</time>
+    <time datetime="2019-10-24 17:34:35 &#43;0800 CST" itemprop="datePublished">2019年10月24日</time>
   </p>
 </header>
 
 	<div class="article-content">
     
-    <p>这个一个关于的页面</p>
-
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      
+		</div>
+    
+    
     
 	</div>
   <footer class="article-footer clearfix">
@@ -89,17 +93,19 @@
 
 
 
+
+
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://weimiao.github.io/blog/categories/%E5%85%B3%E4%BA%8E">关于</a>
+  <a class="article-category-link" href="https://weimiao.github.io/blog/categories/%E6%8A%80%E6%9C%AF">技术</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://weimiao.github.io/blog/about/about/" data-title="About" data-tsina="" class="share clearfix">
+    <div data-url="https://weimiao.github.io/blog/post/1/" data-title="1" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -121,8 +127,8 @@
 
 
 var disqus_config = function () {
-this.page.url = "https://weimiao.github.io/blog/about/about/";
-this.page.identifier = "https://weimiao.github.io/blog/about/about/";
+this.page.url = "https://weimiao.github.io/blog/post/1/";
+this.page.identifier = "https://weimiao.github.io/blog/post/1/";
 };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -270,6 +276,38 @@ $(document).ready(function(){
       $(this).submit();
     }
   });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
 });
 </script>
 
