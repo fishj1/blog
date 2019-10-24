@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>伟渺极客</title>
-    <link>https://weimiao.github.io/blog/feed.xml</link>
+    <link>https://fishj1.github.io/blog/feed.xml</link>
     <description>Recent content on 伟渺极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 24 Oct 2019 17:34:35 +0800</lastBuildDate>
     
-	<atom:link href="https://weimiao.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fishj1.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>1</title>
-      <link>https://weimiao.github.io/blog/post/1/</link>
+      <link>https://fishj1.github.io/blog/post/1/</link>
       <pubDate>Thu, 24 Oct 2019 17:34:35 +0800</pubDate>
       
-      <guid>https://weimiao.github.io/blog/post/1/</guid>
+      <guid>https://fishj1.github.io/blog/post/1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Second</title>
-      <link>https://weimiao.github.io/blog/post/second/</link>
+      <link>https://fishj1.github.io/blog/post/second/</link>
       <pubDate>Thu, 24 Oct 2019 15:11:02 +0800</pubDate>
       
-      <guid>https://weimiao.github.io/blog/post/second/</guid>
+      <guid>https://fishj1.github.io/blog/post/second/</guid>
       <description></description>
     </item>
     
     <item>
       <title>First</title>
-      <link>https://weimiao.github.io/blog/post/first/</link>
+      <link>https://fishj1.github.io/blog/post/first/</link>
       <pubDate>Thu, 24 Oct 2019 14:54:14 +0800</pubDate>
       
-      <guid>https://weimiao.github.io/blog/post/first/</guid>
+      <guid>https://fishj1.github.io/blog/post/first/</guid>
       <description>##一、Mac环境下安装 brew install hugo hugo version //Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown ##二、本地创建一个站点目录，（username为你的github账户名） $ hugo new site username.github.io 可以查</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://weimiao.github.io/blog/about/about/</link>
+      <link>https://fishj1.github.io/blog/about/about/</link>
       <pubDate>Thu, 24 Oct 2019 14:53:35 +0800</pubDate>
       
-      <guid>https://weimiao.github.io/blog/about/about/</guid>
+      <guid>https://fishj1.github.io/blog/about/about/</guid>
       <description>这个一个关于的页面</description>
     </item>
     
