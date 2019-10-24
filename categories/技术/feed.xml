@@ -6,22 +6,22 @@
     <description>Recent content in 技术 on 伟渺极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 24 Oct 2019 17:34:35 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 15:11:02 +0800</lastBuildDate>
     
 	<atom:link href="https://fishj1.github.io/blog/categories/%E6%8A%80%E6%9C%AF/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>1</title>
-      <link>https://fishj1.github.io/blog/post/1/</link>
-      <pubDate>Thu, 24 Oct 2019 17:34:35 +0800</pubDate>
+      <title>从sha256生成hash看PHP为何是最好的语言？</title>
+      <link>https://fishj1.github.io/blog/post/second/</link>
+      <pubDate>Thu, 24 Oct 2019 15:11:02 +0800</pubDate>
       
-      <guid>https://fishj1.github.io/blog/post/1/</guid>
-      <description></description>
+      <guid>https://fishj1.github.io/blog/post/second/</guid>
+      <description>sha256生成文件的唯一hash php版本： $filePath = &amp;quot;&amp;quot;//file path; $sha256 = hash_file(&amp;quot;sha256&amp;quot;, $filePath); go版本： package main import ( &amp;quot;crypto/sha256&amp;quot; &amp;quot;fmt&amp;quot; &amp;quot;io&amp;quot; &amp;quot;log&amp;quot; &amp;quot;os&amp;quot; ) func main() { f, err := os.Open(&amp;quot;file.txt&amp;quot;) if err != nil { log.Fatal(err) } defer f.Close() h := sha256.New() if _, err := io.Copy(h,</description>
     </item>
     
     <item>
-      <title>First</title>
+      <title>hugo搭建个人博客托管到github</title>
       <link>https://fishj1.github.io/blog/post/first/</link>
       <pubDate>Thu, 24 Oct 2019 14:54:14 +0800</pubDate>
       
