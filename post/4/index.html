@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>hugo搭建个人博客托管到github - 伟渺极客</title>
+  <title>Mac下用docker搭建swoole开发环境 - 伟渺极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="##一、Mac环境下安装 brew install hugo hugo version //Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown ##二、本地创建一个站点目录，（username为你的github账户名） $ hugo new site username.github.io 可以查">
+  <meta name="description" content="1.mac下通过docker进入centos容器 docker run -it centos /bin/bash 来通过命令查看当前centos版本: cat /etc/redhat-release 结果: CentOS Linux release 7.6.1810 (Core) 2.下载PHP7以上版本的">
   
-  <meta itemprop="name" content="hugo搭建个人博客托管到github - 伟渺极客">
-  <meta itemprop="description" content="##一、Mac环境下安装 brew install hugo hugo version //Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown ##二、本地创建一个站点目录，（username为你的github账户名） $ hugo new site username.github.io 可以查">
+  <meta itemprop="name" content="Mac下用docker搭建swoole开发环境 - 伟渺极客">
+  <meta itemprop="description" content="1.mac下通过docker进入centos容器 docker run -it centos /bin/bash 来通过命令查看当前centos版本: cat /etc/redhat-release 结果: CentOS Linux release 7.6.1810 (Core) 2.下载PHP7以上版本的">
   <meta itemprop="image" content="https://fishj1.github.io/blog/img/author.jpg">
   
   
@@ -66,7 +66,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://fishj1.github.io/blog/post/first/" title="hugo搭建个人博客托管到github" itemprop="url">hugo搭建个人博客托管到github</a>
+      <a href="https://fishj1.github.io/blog/post/4/" title="Mac下用docker搭建swoole开发环境" itemprop="url">Mac下用docker搭建swoole开发环境</a>
   </h1>
   <p class="article-author">By
     
@@ -74,7 +74,7 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2019-10-24 14:54:14 &#43;0800 CST" itemprop="datePublished">2019年10月24日</time>
+    <time datetime="2020-03-20 23:40:45 &#43;0800 CST" itemprop="datePublished">2020年03月20日</time>
   </p>
 </header>
 
@@ -85,139 +85,195 @@
       
 		</div>
     
-    <p>##一、Mac环境下安装</p>
+    <p>1.mac下通过docker进入centos容器</p>
 
-<pre><code>brew install hugo
-hugo version
-//Hugo Static Site Generator v0.59.0/extended darwin/amd64 BuildDate: unknown
+<pre><code>docker run -it centos /bin/bash
 </code></pre>
 
-<p>##二、本地创建一个站点目录，（username为你的github账户名）</p>
+<p>来通过命令查看当前centos版本:</p>
 
-<pre><code>$ hugo new site username.github.io
+<pre><code>cat /etc/redhat-release
 </code></pre>
 
-<p>可以查看有这些目录：</p>
+<p>结果:</p>
 
-<pre><code>cd username.github.io
+<pre><code>CentOS Linux release 7.6.1810 (Core)
 </code></pre>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/11811369-014227bbab4d4fc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p>2.下载PHP7以上版本的源码：</p>
 
-<p>安装主题</p>
-
-<pre><code>$ cd themes
-$ git clone https://github.com/coderzh/hugo-pacman-theme.git --depth=1
+<pre><code>wget https://www.php.net/distributions/php-7.2.23.tar.gz
 </code></pre>
 
-<p>这套主题感觉还是不错的，简单清爽的界面 <a href="https://themes.gohugo.io/hugo-pacman-theme/">hugo-pacman-theme</a>
-<img src="https://upload-images.jianshu.io/upload_images/11811369-0dd431e651ea2bd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
-打开 config.toml，做以下的配置</p>
+<p>如果没有wget ，可以 yum install wget
+如果安装失败可以修改yum源为清华的yum源
+首先备份 CentOS-Base.repo</p>
 
-<pre><code>BaseURL = &quot;https://username.github.io/blog&quot;
-LanguageCode = &quot;zh-CN&quot;
-HasCJKLanguage = true
-Title = &quot;个人博客&quot;
-Theme = &quot;hugo-pacman-theme&quot;
-pygmentsStyle = &quot;default&quot;
-pygmentsUseClasses = true
-
-[Author]
-  Name = &quot;username&quot;
-
-[outputs]
-  home = [ &quot;RSS&quot;, &quot;HTML&quot; ]
-
-[outputFormats] 
-  [outputFormats.RSS]
-    mediatype = &quot;application/rss&quot;
-    baseName = &quot;feed&quot;
-
-[Params]
-
-  BottomIntroduce = &quot;个人微信&quot;
-  Subtitle = &quot;Talk is cheap,show me code.&quot;
-  Imglogo = &quot;img/logo.jpg&quot;
-  AuthorImg = &quot;img/wechat.jpg&quot;
-  DateFormat = &quot;2019年10月24日&quot;
-  MonthFormat = &quot;2019年10月&quot;
-  FancyBox = false
-
-  [Params.Disqus]
-    ShortName = &quot;helloworld&quot;
-
-  [Params.Strings]
-    Search = &quot;搜索&quot;
-    PageNotFound = &quot;你访问的页面不存在&quot;
-    ShowSideBar = &quot;显示侧边栏&quot;
-    HideSideBar = &quot;隐藏侧边栏&quot;
-    Categories = &quot;分类&quot;
-    Archive = &quot;归档&quot;
-    Tags = &quot;标签&quot;
-    Rss = &quot;RSS 订阅&quot;
-    TableOfContents = &quot;文章目录&quot;
-
-[Menu]
-  [[Menu.Main]]
-    Name = &quot;首页&quot;
-    URL = &quot;/&quot;
-    Weight = 1
-  [[Menu.Main]]
-    Name = &quot;关于&quot;
-    URL = &quot;/about&quot;
-    Weight = 2
+<pre><code>sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 </code></pre>
 
-<p>素材可以放在：</p>
-
-<pre><code>static
-└── img
-    ├── logo.jpg
-    └── wechat.jpg
+<pre><code># CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+ 
+[base]
+name=CentOS-$releasever - Base
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+ 
+#released updates
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+ 
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+ 
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 </code></pre>
 
-<p>修改archetypes下面default.md</p>
+<p>清除缓存</p>
 
-<pre><code>---
-title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
-date: {{ .Date }}
-draft: false
-toc: false
-categories: [&quot;技术&quot;]
-tags: []
----
+<pre><code>yum clean all
+rm -rf  /var/cache/yum/
 </code></pre>
 
-<p>创建文章：</p>
+<p>生成缓存</p>
 
-<pre><code>$ hugo new post/first.md
+<pre><code>yum makecache
 </code></pre>
 
-<p>生成静态博客并在本地查看</p>
+<p>3.进入php目录
+先解决安装前面可能的依赖</p>
 
-<pre><code>hugo server
+<pre><code>yum install gcc gcc-c++ libxml2-devel make 
 </code></pre>
 
-<p>你的博客就可以在本地跑起来了，访问<a href="http://127.0.0.1:1313/你可以看到内容。">http://127.0.0.1:1313/你可以看到内容。</a>
-###三、将本地的个人博客托管到github上面
-1.首先需要生成public目录</p>
+<p>编译安装：</p>
 
-<pre><code>$ hugo --baseUrl =&quot;https://username.github.io/blog/&quot;
+<pre><code>./configure \     检查环境
+--prefix=/usr/local/php7_2 \   指定php安装路径
+--with-config-file-path=/etc    配置文件路径
+make &amp;&amp; make install   编译并安装
 </code></pre>
 
-<p>2.github下面创建blog仓库，配置Github Pages
-<img src="https://upload-images.jianshu.io/upload_images/11811369-c25356d60dbbc420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
-<img src="https://upload-images.jianshu.io/upload_images/11811369-4877803d7acfe88b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
-3.将public目录下面代码上传的你的github的blog仓库下：</p>
+<p>将php加到环境变量中：</p>
 
-<pre><code>git remote add origin https://github.com/username/blog.git
-git add -A
-git commit -m &quot;first commit&quot;
-git push -u origin master
+<pre><code>vi ~/.bashrc  编辑当前用户环境变量文件
+alias php7=/usr/bin/php  增加一行
+source ~/.bashrc    使环境变量生效
 </code></pre>
 
-<p>等待一会儿，在浏览其中访问：
-<a href="https://username.github.io/blog">https://username.github.io/blog</a></p>
+<p>将php.ini配置文件加到/etc/目录下面</p>
+
+<pre><code>cp php.ini-development /etc/php.ini
+</code></pre>
+
+<p>可以去到  /usr/local/php7_2查看一下php的目录
+<img src="https://upload-images.jianshu.io/upload_images/11811369-9da0966067a4e07a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>ok，完成。
+3.我们来下载swoole的源码</p>
+
+<pre><code>wget https://github.com/swoole/swoole-src.git
+</code></pre>
+
+<p>进入到swoole-src目录</p>
+
+<pre><code>/usr/local/php7_2/bin/phpize
+</code></pre>
+
+<p>有是如果遇到:
+Cannot find autoconf. Please check your autoconf installation and the
+$PHP_AUTOCONF environment variable. Then, rerun this script.
+可以执行一下：</p>
+
+<pre><code>yum install autoconf
+</code></pre>
+
+<p>查看当前目录到了一个configure文件</p>
+
+<pre><code>./configure \
+--with-php-config=/usr/local/php7_2/bin/php-config
+make &amp;&amp; make install
+</code></pre>
+
+<p>安装完成之后，打开/etc/php.ini
+加入</p>
+
+<pre><code>extension=swoole.so
+</code></pre>
+
+<p>执行php7 -m可以查看swoole是否安装成功。
+<img src="https://upload-images.jianshu.io/upload_images/11811369-c214a87be295e401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>4将容器打包成镜像
+现在容器中exit命令退出容器</p>
+
+<pre><code>docker commit fb4ac22da9b0 centos_php7_swoole
+</code></pre>
+
+<p>查看打包好的镜像：</p>
+
+<pre><code>docker images | grep php72_swoole
+</code></pre>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/11811369-4c994bd782562d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>5.在docker 中新建一个http_server.php文件测试</p>
+
+<pre><code>&lt;?php
+$http= new Swoole\Http\Server(&quot;0.0.0.0&quot;, 9501);
+
+$http-&gt;on('request', function ($request, $response) {
+    var_dump($request-&gt;get, $request-&gt;post);
+    $response-&gt;header(&quot;Content-Type&quot;, &quot;text/html; charset=utf-8&quot;);
+    $response-&gt;end(&quot;&lt;h1&gt;Hello Swoole. #&quot;.rand(1000, 9999).&quot;&lt;/h1&gt;&quot;);
+});
+
+$http-&gt;start();
+</code></pre>
+
+<p>退出docker</p>
+
+<pre><code>exit;
+</code></pre>
+
+<p>后台运行centos_php7_swoole容器</p>
+
+<pre><code>docker run -d -p 9501:9501 centos_php7_swoole /usr/local/php7_2/bin/php /usr/local/work/http_server.php
+</code></pre>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/11811369-8fe7fe9606e60ad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>6.浏览器访问,看到如下，就成功了！</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/11811369-fa55b77fe52f2bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
     
 	</div>
@@ -238,7 +294,7 @@ git push -u origin master
 
 
   <div class="article-share" id="share">
-    <div data-url="https://fishj1.github.io/blog/post/first/" data-title="hugo搭建个人博客托管到github" data-tsina="" class="share clearfix">
+    <div data-url="https://fishj1.github.io/blog/post/4/" data-title="Mac下用docker搭建swoole开发环境" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -260,8 +316,8 @@ git push -u origin master
 
 
 var disqus_config = function () {
-this.page.url = "https://fishj1.github.io/blog/post/first/";
-this.page.identifier = "https://fishj1.github.io/blog/post/first/";
+this.page.url = "https://fishj1.github.io/blog/post/4/";
+this.page.identifier = "https://fishj1.github.io/blog/post/4/";
 };
 (function() { 
 var d = document, s = d.createElement('script');

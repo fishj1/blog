@@ -6,10 +6,19 @@
     <description>Recent content in 技术 on 伟渺极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Mar 2020 23:20:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 23:40:45 +0800</lastBuildDate>
     
 	<atom:link href="https://fishj1.github.io/blog/categories/%E6%8A%80%E6%9C%AF/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac下用docker搭建swoole开发环境</title>
+      <link>https://fishj1.github.io/blog/post/4/</link>
+      <pubDate>Fri, 20 Mar 2020 23:40:45 +0800</pubDate>
+      
+      <guid>https://fishj1.github.io/blog/post/4/</guid>
+      <description>1.mac下通过docker进入centos容器 docker run -it centos /bin/bash 来通过命令查看当前centos版本: cat /etc/redhat-release 结果: CentOS Linux release 7.6.1810 (Core) 2.下载PHP7以上版本的</description>
+    </item>
     
     <item>
       <title>Elasticsearch 6.0 一个索引只允许有一个type</title>
