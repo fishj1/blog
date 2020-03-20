@@ -6,10 +6,19 @@
     <description>Recent content on 伟渺极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 24 Oct 2019 15:11:02 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 23:20:46 +0800</lastBuildDate>
     
 	<atom:link href="https://fishj1.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Thrid</title>
+      <link>https://fishj1.github.io/blog/post/thrid/</link>
+      <pubDate>Fri, 20 Mar 2020 23:20:46 +0800</pubDate>
+      
+      <guid>https://fishj1.github.io/blog/post/thrid/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>从sha256生成hash看PHP为何是最好的语言？</title>

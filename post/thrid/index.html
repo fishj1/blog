@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>从sha256生成hash看PHP为何是最好的语言？ - 伟渺极客</title>
+  <title>Thrid - 伟渺极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="sha256生成文件的唯一hash php版本： $filePath = &quot;&quot;//file path; $sha256 = hash_file(&quot;sha256&quot;, $filePath); go版本： package main import ( &quot;crypto/sha256&quot; &quot;fmt&quot; &quot;io&quot; &quot;log&quot; &quot;os&quot; ) func main() { f, err := os.Open(&quot;file.txt&quot;) if err != nil { log.Fatal(err) } defer f.Close() h := sha256.New() if _, err := io.Copy(h,">
+  <meta name="description" content="">
   
-  <meta itemprop="name" content="从sha256生成hash看PHP为何是最好的语言？ - 伟渺极客">
-  <meta itemprop="description" content="sha256生成文件的唯一hash php版本： $filePath = &quot;&quot;//file path; $sha256 = hash_file(&quot;sha256&quot;, $filePath); go版本： package main import ( &quot;crypto/sha256&quot; &quot;fmt&quot; &quot;io&quot; &quot;log&quot; &quot;os&quot; ) func main() { f, err := os.Open(&quot;file.txt&quot;) if err != nil { log.Fatal(err) } defer f.Close() h := sha256.New() if _, err := io.Copy(h,">
+  <meta itemprop="name" content="Thrid - 伟渺极客">
+  <meta itemprop="description" content="">
   <meta itemprop="image" content="https://fishj1.github.io/blog/img/author.jpg">
   
   
@@ -66,7 +66,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://fishj1.github.io/blog/post/second/" title="从sha256生成hash看PHP为何是最好的语言？" itemprop="url">从sha256生成hash看PHP为何是最好的语言？</a>
+      <a href="https://fishj1.github.io/blog/post/thrid/" title="Thrid" itemprop="url">Thrid</a>
   </h1>
   <p class="article-author">By
     
@@ -74,123 +74,24 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2019-10-24 15:11:02 &#43;0800 CST" itemprop="datePublished">2019年10月24日</time>
+    <time datetime="2020-03-20 23:20:46 &#43;0800 CST" itemprop="datePublished">2020年03月20日</time>
   </p>
 </header>
 
 	<div class="article-content">
     
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      
+		</div>
     
-
-<h1 id="sha256生成文件的唯一hash-http-wiki-baidu-com-pages-viewpage-action-pageid-933773114"><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=933773114">sha256生成文件的唯一hash</a></h1>
-
-<p>php版本：</p>
-
-<pre><code>$filePath = &quot;&quot;//file path; 
-$sha256 = hash_file(&quot;sha256&quot;, $filePath);
-</code></pre>
-
-<p>go版本：</p>
-
-<pre><code>
-package main
-
-
-
-import (
-
-  &quot;crypto/sha256&quot;
-
-  &quot;fmt&quot;
-
-  &quot;io&quot;
-
-  &quot;log&quot;
-
-  &quot;os&quot;
-
-)
-
-func main() {
-
-  f, err := os.Open(&quot;file.txt&quot;)
-
-  if err != nil {
-
-    log.Fatal(err)
-
-  }
-
-  defer f.Close()
-
-
-
-  h := sha256.New()
-
-  if _, err := io.Copy(h, f); err != nil {
-
-    log.Fatal(err)
-
-  }
-
-
-
-  fmt.Printf(&quot;%x&quot;, h.Sum(nil))
-
-}
-</code></pre>
-
-<p>java版本</p>
-
-<pre><code>
-    byte[] buffer= new byte[8192];
-
-    int count;
-
-    MessageDigest digest = MessageDigest.getInstance(&quot;SHA-256&quot;);
-
-    BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileName));
-
-    while ((count = bis.read(buffer)) &gt; 0) {
-
-        digest.update(buffer, 0, count);
-
-    }
-
-    bis.close();
-
-    byte[] hash = digest.digest();
-
-    System.out.println(byte2Hex(hash));
-
-     private static String byte2Hex(byte[] bytes){
-
-            StringBuffer stringBuffer = new StringBuffer();
-
-            String temp = null;
-
-            for (int i=0;i&lt;bytes.length;i++){
-
-                 temp = Integer.toHexString(bytes[i] &amp; 0xFF);
-
-                 if (temp.length()==1){
-                          //1得到一位的进行补0操作
-                          stringBuffer.append(&quot;0&quot;);
-                  }
-                 stringBuffer.append(temp);
-           }
-           return stringBuffer.toString();
-   }
-</code></pre>
-
-<p>所以：________________________________________________</p>
-
-<p>从代码量来说，PHP是世界上最好的语言。</p>
-
+    
     
 	</div>
   <footer class="article-footer clearfix">
   
+
+
 
 
 
@@ -204,7 +105,7 @@ func main() {
 
 
   <div class="article-share" id="share">
-    <div data-url="https://fishj1.github.io/blog/post/second/" data-title="从sha256生成hash看PHP为何是最好的语言？" data-tsina="" class="share clearfix">
+    <div data-url="https://fishj1.github.io/blog/post/thrid/" data-title="Thrid" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -226,8 +127,8 @@ func main() {
 
 
 var disqus_config = function () {
-this.page.url = "https://fishj1.github.io/blog/post/second/";
-this.page.identifier = "https://fishj1.github.io/blog/post/second/";
+this.page.url = "https://fishj1.github.io/blog/post/thrid/";
+this.page.identifier = "https://fishj1.github.io/blog/post/thrid/";
 };
 (function() { 
 var d = document, s = d.createElement('script');
