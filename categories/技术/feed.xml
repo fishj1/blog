@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Thrid</title>
+      <title>Elasticsearch 6.0 一个索引只允许有一个type</title>
       <link>https://fishj1.github.io/blog/post/thrid/</link>
       <pubDate>Fri, 20 Mar 2020 23:20:46 +0800</pubDate>
       
       <guid>https://fishj1.github.io/blog/post/thrid/</guid>
-      <description></description>
+      <description>未来发布的elasticsearch 6.0.0版本为保持兼容，仍然会支持单index，多type结构，但是作者已不推荐这么设置。在elast</description>
     </item>
     
     <item>
